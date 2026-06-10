@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Why I started writing online as a CS student — on building a personal brand, thinking in public, and the surprising benefits of vulnerability." />
+  <title>Why I Started Writing | Inkwell</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+  <style>
+    #readingProgress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--accent); width: 0%;
+      z-index: 9999; transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="readingProgress"></div>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-container" style="max-width:760px;">
+
+      <a href="blog.html" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.88rem; color:var(--text-muted); margin-bottom:2rem; transition:color 0.2s;"
+         onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+        ← Back to Blog
+      </a>
+
+      <header class="article-header">
+        <p class="card-category">🎨 Creativity</p>
+        <h1>Why I Started Writing: On Building a Personal Brand as a Student</h1>
+        <div class="article-meta">
+          <span>📅 April 28, 2025</span>
+          <span>✍️ Muhammad Syamil</span>
+          <span id="readTimeBadge">☕ 5 min read</span>
+        </div>
+      </header>
+
+      <article class="article-body">
+
+        <p>
+          For a long time, I convinced myself I had nothing worth saying. 
+          I was a student, not an expert. Who was I to write about technology, design, 
+          or software development? Surely readers would prefer content from people 
+          who actually know things.
+        </p>
+
+        <p>
+          Then a professor said something that changed my perspective: 
+          <em>"If you can't explain it simply, you don't understand it well enough."</em>
+          He wasn't talking about writing. He was talking about code reviews. 
+          But I applied it to writing anyway.
+        </p>
+
+        <blockquote>
+          "The expert is the person who has made all the mistakes possible in a very narrow field." — Niels Bohr
+        </blockquote>
+
+        <h2>What Writing Actually Does</h2>
+
+        <p>
+          Writing forces clarity. When I understand something in my head, it feels 
+          complete. When I try to explain it in writing, the gaps appear immediately. 
+          Where does my understanding actually stop? What am I assuming? What would a 
+          reader need to know that I'm skipping?
+        </p>
+
+        <p>
+          This is the real value of a learning blog — not the audience (which may be 
+          tiny), but the act of writing itself. You are your most important reader.
+        </p>
+
+        <h2>The Personal Brand Myth</h2>
+
+        <p>
+          "Personal brand" sounds exhausting and performative. It conjures images of 
+          LinkedIn posts that begin with "Hot take:" and end with "Thoughts?". 
+          That's not what I mean.
+        </p>
+
+        <p>
+          What I mean is simpler: a consistent, findable record of who you are and 
+          what you think. When someone Googles your name before a job interview, 
+          a well-maintained blog tells a better story than a sparse LinkedIn profile.
+        </p>
+
+        <p>
+          It signals initiative. It signals that you can communicate. It gives a 
+          hiring manager something to ask you about beyond your grades.
+        </p>
+
+        <h2>The Vulnerability Problem</h2>
+
+        <p>
+          The biggest obstacle isn't technical. It's the fear that someone will 
+          read your writing and conclude that you're not as smart as you're pretending to be.
+        </p>
+
+        <p>
+          Here's the thing: most readers are kind. Most people who find a student's 
+          learning blog are rooting for the writer. The imposter syndrome that tells 
+          you "you're not qualified" is lying.
+        </p>
+
+        <p>
+          The correct frame is: <strong>you're not writing as an authority, 
+          you're writing as a learner.</strong> Those are different voices, and both 
+          are valuable.
+        </p>
+
+        <h2>What I Wish I'd Known Earlier</h2>
+
+        <p>
+          Start before you're ready. I could have begun this blog two years ago. 
+          Everything I would have written then would have been less polished than now — 
+          and that's fine. The posts from two years ago would have served readers two 
+          years behind me.
+        </p>
+
+        <p>
+          Publish regularly, even if imperfectly. Consistency matters more than 
+          quality in the early days. You can't edit a blank page.
+        </p>
+
+        <p>
+          Write for your past self. The most useful blog posts are answers to questions 
+          you had six months ago. If you were confused about something, someone else is 
+          confused about it right now.
+        </p>
+
+        <h2>Starting Is the Hard Part</h2>
+
+        <p>
+          So if you've been thinking about starting a blog, a GitHub portfolio, a 
+          newsletter, or even a series of LinkedIn posts — the moment you're waiting 
+          for isn't coming. The moment is now. You already know enough to help someone.
+        </p>
+
+        <p style="padding:1.25rem; background:var(--bg-alt); border-radius:var(--radius); border:1px solid var(--border);">
+          <strong>🖊️ Practical tip:</strong> Start with a "Today I Learned" post. 
+          Write one thing you learned this week. Keep it under 300 words. 
+          Publish it. That's it. That's the start.
+        </p>
+
+      </article>
+
+      <hr class="divider" />
+      <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+        <div style="font-size:2.5rem; background:var(--bg-alt); border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">👩‍💻</div>
+        <div>
+          <p style="font-weight:600; margin:0;">Written by Muhammad Syamil</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0.2rem 0 0.5rem;">CS Student · Inkwell</p>
+          <a href="about.html" style="font-size:0.83rem;">Read more about me →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <a href="post-github-pages.html" class="btn btn-outline">← Previous Post</a>
+        <a href="post-dark-mode.html" class="btn btn-primary">Next Post →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

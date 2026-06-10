@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deploy your first website for free with GitHub Pages — a step-by-step beginner's guide." />
+  <title>GitHub Pages Guide | Inkwell</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+  <style>
+    #readingProgress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--accent); width: 0%;
+      z-index: 9999; transition: width 0.1s linear;
+    }
+    .step-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      counter-increment: step;
+      position: relative;
+    }
+    .step-block::before {
+      content: counter(step);
+      position: absolute;
+      top: -12px; left: 1rem;
+      background: var(--accent); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      padding: 0.15rem 0.6rem;
+      border-radius: 50px;
+    }
+    .steps-wrapper { counter-reset: step; }
+    .code-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      overflow-x: auto;
+      margin: 0.75rem 0;
+      color: var(--text);
+    }
+    .code-block span.comment { color: var(--text-muted); font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <div id="readingProgress"></div>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-container" style="max-width:760px;">
+
+      <a href="blog.html" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.88rem; color:var(--text-muted); margin-bottom:2rem; transition:color 0.2s;"
+         onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+        ← Back to Blog
+      </a>
+
+      <header class="article-header">
+        <p class="card-category">⚡ Technology</p>
+        <h1>Getting Started with GitHub Pages: Deploy for Free in 10 Minutes</h1>
+        <div class="article-meta">
+          <span>📅 May 1, 2025</span>
+          <span>✍️ Muhammad Syamil</span>
+          <span id="readTimeBadge">☕ 4 min read</span>
+        </div>
+      </header>
+
+      <article class="article-body">
+
+        <p>
+          When I finished my first HTML project, I had no idea how to show it to anyone. 
+          It lived on my laptop, inside a folder, going nowhere. Then a classmate mentioned 
+          GitHub Pages — and within ten minutes, my project was live on the internet with a 
+          real URL. For free. No server, no hosting fees, no configuration files.
+        </p>
+
+        <p>
+          Here's exactly how to do it.
+        </p>
+
+        <h2>What Is GitHub Pages?</h2>
+        <p>
+          GitHub Pages is a free static site hosting service built into GitHub. 
+          Any repository containing HTML, CSS, or JavaScript files can be published as a 
+          website. Your URL will look like: <code>yourusername.github.io/repo-name</code>.
+        </p>
+
+        <h2>Step-by-Step Guide</h2>
+
+        <div class="steps-wrapper">
+          <div class="step-block">
+            <strong>Create a GitHub account</strong>
+            <p style="margin:0.5rem 0 0; font-size:0.92rem; color:var(--text-muted);">
+              Go to <code>github.com</code> and sign up if you haven't already. 
+              Choose a username that looks professional — it'll appear in your URL.
+            </p>
+          </div>
+
+          <div class="step-block">
+            <strong>Create a new repository</strong>
+            <p style="margin:0.5rem 0 0; font-size:0.92rem; color:var(--text-muted);">
+              Click the green <strong>New</strong> button on your GitHub dashboard. 
+              Name the repository (e.g., <code>personal-blog</code>), set it to 
+              <strong>Public</strong>, and click Create. Don't add a README yet.
+            </p>
+          </div>
+
+          <div class="step-block">
+            <strong>Upload your project files</strong>
+            <p style="margin:0.5rem 0 0; font-size:0.92rem; color:var(--text-muted);">
+              In the empty repository, click <strong>uploading an existing file</strong> and 
+              drag your project folder in. Or use Git in the terminal:
+            </p>
+            <div class="code-block">
+              git init<br>
+              git add .<br>
+              git commit -m "Initial commit: Add project files"<br>
+              git branch -M main<br>
+              git remote add origin https://github.com/syamil-khairil/personal-blog.git<br>
+              git push -u origin main
+            </div>
+          </div>
+
+          <div class="step-block">
+            <strong>Enable GitHub Pages</strong>
+            <p style="margin:0.5rem 0 0; font-size:0.92rem; color:var(--text-muted);">
+              Go to your repository → <strong>Settings</strong> → <strong>Pages</strong> 
+              (in the left sidebar). Under <em>Source</em>, select 
+              <strong>Deploy from a branch</strong>, then choose <code>main</code> / <code>root</code>. 
+              Click <strong>Save</strong>.
+            </p>
+          </div>
+
+          <div class="step-block">
+            <strong>Wait 60 seconds and visit your site</strong>
+            <p style="margin:0.5rem 0 0; font-size:0.92rem; color:var(--text-muted);">
+              GitHub will build and deploy your site. After about a minute, your site is live at:
+            </p>
+            <div class="code-block">
+              https://syamil-khairil.github.io/personal-blog/
+            </div>
+            <p style="margin:0.5rem 0 0; font-size:0.88rem; color:var(--text-muted);">
+              If it doesn't load immediately, wait a couple of minutes and refresh. 
+              The first deployment takes slightly longer.
+            </p>
+          </div>
+        </div>
+
+        <h2>Tips for a Smooth Deployment</h2>
+
+        <p>
+          Make sure your entry point is named <code>index.html</code> (not <code>home.html</code> 
+          or anything else). GitHub Pages serves <code>index.html</code> at the root URL.
+        </p>
+
+        <p>
+          Use <strong>relative paths</strong> for your CSS and JS files 
+          (<code>./css/style.css</code> instead of absolute paths), or they'll break when 
+          deployed to a subfolder URL.
+        </p>
+
+        <p>
+          Every time you push a new commit to the <code>main</code> branch, GitHub 
+          Pages automatically rebuilds and redeploys. No manual steps needed after setup.
+        </p>
+
+        <h2>What You Just Did</h2>
+        <p>
+          You deployed a real website, accessible to anyone in the world, for zero cost. 
+          GitHub Pages is how this blog is hosted. It's also how countless open source 
+          project documentation sites, portfolios, and landing pages are served every day.
+        </p>
+
+        <p style="padding:1.25rem; background:var(--bg-alt); border-radius:var(--radius); border:1px solid var(--border);">
+          <strong>🚀 Next step:</strong> Add a custom domain. GitHub Pages supports free 
+          custom domains — you just need to buy the domain (~RM40/year) and configure 
+          a CNAME record. GitHub's documentation covers this in detail.
+        </p>
+
+      </article>
+
+      <hr class="divider" />
+      <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+        <div style="font-size:2.5rem; background:var(--bg-alt); border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">👩‍💻</div>
+        <div>
+          <p style="font-weight:600; margin:0;">Written by Muhammad Syamil</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0.2rem 0 0.5rem;">CS Student · Inkwell</p>
+          <a href="about.html" style="font-size:0.83rem;">Read more about me →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <a href="post-design-thinking.html" class="btn btn-outline">← Previous Post</a>
+        <a href="post-why-i-write.html" class="btn btn-primary">Next Post →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

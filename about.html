@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About the author — Inkwell Personal Blog." />
+  <title>About | Inkwell</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-container">
+
+      <!-- Page Title -->
+      <div style="margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+        <p class="section-label">✦ The Person Behind the Words</p>
+        <h1>About Me</h1>
+      </div>
+
+      <!-- About Grid -->
+      <div class="about-grid">
+
+        <!-- Left: Avatar + Social -->
+        <aside class="about-avatar-wrap reveal">
+          <div class="about-avatar">👩‍💻</div>
+          <!-- Replace the emoji above with:
+               <img src="../images/avatar.jpg" alt="Your Name" style="width:100%;border-radius:var(--radius);" />
+          -->
+          <p style="font-family: var(--font-display); font-size:1.1rem; font-weight:700; margin-bottom:0.2rem;">Syamil</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">CS Student · Kuala Terengganu, MY 🇲🇾</p>
+
+          <ul class="about-social">
+            <li><a href="https://github.com/syamil-khairil" target="_blank" rel="noopener">🐙 GitHub</a></li>
+            <li><a href="https://linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a></li>
+            <li><a href="mailto:syamil-khairil@proton.me">✉️ Email</a></li>
+            <li><a href="contact.html">📬 Send a Message</a></li>
+          </ul>
+        </aside>
+
+        <!-- Right: Bio -->
+        <section class="about-content">
+
+          <!-- Introduction -->
+          <div class="reveal">
+            <h2>Hello, I'm Syamil 👋</h2>
+            <p>
+              I'm a third-year Computer Science student at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>, 
+              specialising in software development. I created <em>Inkwell</em> as a space to document what I learn, 
+              share honest reflections on the tech industry, and practice communicating complex ideas clearly.
+            </p>
+            <p>
+              Writing helps me think. When I have to explain a concept to an imaginary reader, 
+              I quickly find the gaps in my own understanding. This blog is both a portfolio and a 
+              learning journal — imperfect by design, genuine by intention.
+            </p>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- What I Do -->
+          <div class="reveal">
+            <h2>What I Do</h2>
+            <p>
+              By day I'm learning about algorithms, databases, and software architecture. 
+              By night I build small web projects, experiment with CSS, and occasionally 
+              contribute to open source. My current focus is on:
+            </p>
+            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem; margin:1rem 0;">
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span style="color:var(--accent);margin-top:0.1rem;">→</span>
+                <span>Frontend development with semantic HTML, modern CSS, and vanilla JavaScript</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span style="color:var(--accent);margin-top:0.1rem;">→</span>
+                <span>Version control best practices and open source collaboration via GitHub</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span style="color:var(--accent);margin-top:0.1rem;">→</span>
+                <span>Writing and documenting technical work clearly for non-technical audiences</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span style="color:var(--accent);margin-top:0.1rem;">→</span>
+                <span>Understanding UX principles and applying them to student projects</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Skills -->
+          <div class="reveal">
+            <h2>Skills &amp; Technologies</h2>
+            <p class="text-muted" style="font-size:0.9rem; margin-bottom:0.75rem;">Things I've used and am actively learning.</p>
+            <div class="skills-grid">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">GitHub Pages</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Java (learning)</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Markdown</span>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Timeline -->
+          <div class="reveal">
+            <h2>Journey So Far</h2>
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <span class="timeline-year">2025</span>
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>Launched Inkwell ✒️</strong>
+                  <span>Built this personal blog from scratch as part of my software development portfolio. 
+                  Focused on clean code, accessibility, and dark mode support.</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>CSD 34203 — Special Topics in Software Development</strong>
+                  <span>Enrolled in an advanced module covering modern software practices, 
+                  Git workflows, and entrepreneurial mindset in tech projects.</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-year">2023</span>
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>First open-source contribution</strong>
+                  <span>Submitted a documentation PR to a small Python library. 
+                  Small step, big confidence boost.</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-year">2022</span>
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>Started at UniSZA — Faculty of Informatics and Computing</strong>
+                  <span>Began the Bachelor of Computer Science programme. 
+                  Wrote my first "Hello, World!" in Python.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Why This Blog -->
+          <div class="reveal">
+            <h2>Why "Inkwell"?</h2>
+            <p>
+              An inkwell is where ideas are dipped before they become words on a page. 
+              It felt like the right metaphor for a place where half-formed thoughts get 
+              sharpened into something coherent. Also, the name was available. 🙂
+            </p>
+            <p>
+              If anything here resonates, gets you thinking, or you spot an error — 
+              <a href="contact.html">I'd love to hear from you</a>.
+            </p>
+          </div>
+
+        </section>
+      </div><!-- /about-grid -->
+    </div><!-- /page-container -->
+  </main>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

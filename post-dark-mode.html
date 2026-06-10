@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How to build a dark mode toggle with vanilla JavaScript and localStorage — with system preference detection." />
+  <title>Building a Dark Mode Toggle | Inkwell</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+  <style>
+    #readingProgress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--accent); width: 0%;
+      z-index: 9999; transition: width 0.1s linear;
+    }
+    .code-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      color: var(--text);
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="readingProgress"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-container" style="max-width:760px;">
+
+      <a href="blog.html" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.88rem; color:var(--text-muted); margin-bottom:2rem; transition:color 0.2s;"
+         onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+        ← Back to Blog
+      </a>
+
+      <header class="article-header">
+        <p class="card-category">⚡ Technology</p>
+        <h1>Building a Dark Mode Toggle with Vanilla JavaScript and localStorage</h1>
+        <div class="article-meta">
+          <span>📅 April 22, 2025</span>
+          <span>✍️ Muhammad Syamil</span>
+          <span id="readTimeBadge">☕ 3 min read</span>
+        </div>
+      </header>
+
+      <article class="article-body">
+
+        <p>
+          The dark mode toggle on this blog does three things: it respects your system 
+          preference on first visit, saves your choice to <code>localStorage</code>, 
+          and applies the theme instantly on every subsequent page load to prevent a 
+          "flash of wrong theme." Here's exactly how it's built.
+        </p>
+
+        <h2>Step 1 — CSS Custom Properties</h2>
+        <p>
+          Define all your colours as CSS variables (custom properties) on the 
+          <code>:root</code> selector, then override them inside a 
+          <code>[data-theme="dark"]</code> attribute selector.
+        </p>
+
+        <div class="code-block">/* Light theme (default) */
+:root {
+  --bg:       #faf9f6;
+  --text:     #1c1917;
+  --accent:   #c2410c;
+}
+
+/* Dark theme — override via attribute */
+[data-theme="dark"] {
+  --bg:       #0f0e0c;
+  --text:     #f5f0eb;
+  --accent:   #fb923c;
+}</div>
+
+        <p>
+          Every element in your CSS should use these variables instead of raw colours: 
+          <code>background: var(--bg)</code>, <code>color: var(--text)</code>. 
+          When you swap the attribute, everything updates instantly.
+        </p>
+
+        <h2>Step 2 — The Toggle Button</h2>
+
+        <div class="code-block">&lt;button id="themeToggle" aria-label="Toggle dark mode"&gt;
+  &lt;span id="themeIcon"&gt;🌙&lt;/span&gt;
+  &lt;span id="themeLabel"&gt;Dark&lt;/span&gt;
+&lt;/button&gt;</div>
+
+        <h2>Step 3 — JavaScript Logic</h2>
+
+        <div class="code-block">const themeToggle = document.getElementById('themeToggle');
+const themeIcon   = document.getElementById('themeIcon');
+const themeLabel  = document.getElementById('themeLabel');
+
+function applyTheme(theme) {
+  // Set the attribute on &lt;html&gt;
+  document.documentElement.setAttribute('data-theme', theme);
+  // Persist to localStorage
+  localStorage.setItem('blog-theme', theme);
+  // Update the button UI
+  themeIcon.textContent  = theme === 'dark' ? '☀️' : '🌙';
+  themeLabel.textContent = theme === 'dark' ? 'Light' : 'Dark';
+}
+
+// On first visit: check localStorage, then system preference
+const saved  = localStorage.getItem('blog-theme');
+const system = window.matchMedia('(prefers-color-scheme: dark)').matches
+               ? 'dark' : 'light';
+applyTheme(saved || system);
+
+// Toggle on button click
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});</div>
+
+        <h2>Why This Approach Works Well</h2>
+
+        <p>
+          The code runs immediately on page load (not inside <code>DOMContentLoaded</code>), 
+          so the theme is applied before the browser paints. This prevents the flash of 
+          white that appears on dark-mode sites when the theme is applied too late.
+        </p>
+
+        <p>
+          Using <code>data-theme</code> on the <code>&lt;html&gt;</code> element means 
+          the CSS override applies to every descendant — you don't need to pass the 
+          theme through props or context like you would in a framework.
+        </p>
+
+        <p>
+          Finally, <code>window.matchMedia('(prefers-color-scheme: dark)')</code> 
+          reads the user's operating system preference. This means first-time visitors 
+          immediately get the theme they expect, without any interaction.
+        </p>
+
+        <p style="padding:1.25rem; background:var(--bg-alt); border-radius:var(--radius); border:1px solid var(--border);">
+          <strong>💡 Try it now:</strong> Click the 🌙 button in the top right. 
+          Then refresh the page — your preference is saved. That's 
+          <code>localStorage</code> at work.
+        </p>
+
+      </article>
+
+      <hr class="divider" />
+      <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+        <div style="font-size:2.5rem; background:var(--bg-alt); border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">👩‍💻</div>
+        <div>
+          <p style="font-weight:600; margin:0;">Written by Muhammad Syamil</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0.2rem 0 0.5rem;">CS Student · Inkwell</p>
+          <a href="about.html" style="font-size:0.83rem;">Read more about me →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <a href="post-why-i-write.html" class="btn btn-outline">← Previous Post</a>
+        <a href="blog.html" class="btn btn-primary">All Posts →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

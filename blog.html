@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="All blog posts — Inkwell. Technology, creativity, and web development." />
+  <title>Blog | Inkwell</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══ BLOG HEADER ════════════════════════════════════ -->
+    <div class="blog-header">
+      <div class="blog-header-inner">
+        <p class="section-label">✦ All Posts</p>
+        <h1 style="margin-bottom:0.5rem;">The Blog</h1>
+        <p class="text-muted">Thoughts on code, creativity, and the craft of building things.</p>
+
+        <!-- Category Filter -->
+        <div class="filter-bar" role="group" aria-label="Filter posts by category">
+          <button class="filter-btn active" data-filter="all">All Posts</button>
+          <button class="filter-btn" data-filter="technology">⚡ Technology</button>
+          <button class="filter-btn" data-filter="creativity">🎨 Creativity</button>
+          <button class="filter-btn" data-filter="deepdive">🧠 Deep Dive</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ POSTS GRID ══════════════════════════════════════ -->
+    <div class="page-container">
+      <div class="cards-grid">
+
+        <!-- Post 1 — Featured/Deep Dive -->
+        <article class="card reveal" data-category="deepdive">
+          <div class="card-img">🧠</div>
+          <div class="card-body">
+            <p class="card-category">Deep Dive</p>
+            <h3 class="card-title">Why Every Developer Should Learn to Design (Even Badly)</h3>
+            <p class="card-excerpt">
+              You don't need to become a designer to benefit from design thinking. 
+              Understanding colour, whitespace, and typography will make you a 
+              dramatically better — and more empathetic — engineer.
+            </p>
+            <div class="card-meta">
+              <span>📅 April 20, 2025 · ☕ 6 min</span>
+              <a href="post-design-thinking.html">Read →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="card reveal" data-category="technology">
+          <div class="card-img">⚡</div>
+          <div class="card-body">
+            <p class="card-category">Technology</p>
+            <h3 class="card-title">Getting Started with GitHub Pages: Deploy for Free in 10 Minutes</h3>
+            <p class="card-excerpt">
+              GitHub Pages is one of the most underrated tools for students. Here's a 
+              step-by-step guide to launching your first site at zero cost.
+            </p>
+            <div class="card-meta">
+              <span>📅 May 1, 2025 · ☕ 4 min</span>
+              <a href="post-github-pages.html">Read →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="card reveal" data-category="creativity">
+          <div class="card-img">🎨</div>
+          <div class="card-body">
+            <p class="card-category">Creativity</p>
+            <h3 class="card-title">Why I Started Writing: On Building a Personal Brand as a Student</h3>
+            <p class="card-excerpt">
+              Writing online as a university student feels vulnerable. But it's the
+              fastest way to grow your network, sharpen your thinking, and land opportunities.
+            </p>
+            <div class="card-meta">
+              <span>📅 April 28, 2025 · ☕ 5 min</span>
+              <a href="post-why-i-write.html">Read →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="card reveal" data-category="technology">
+          <div class="card-img">🌙</div>
+          <div class="card-body">
+            <p class="card-category">Technology</p>
+            <h3 class="card-title">Building a Dark Mode Toggle with Vanilla JavaScript and localStorage</h3>
+            <p class="card-excerpt">
+              A walkthrough of the dark mode implementation on this very blog — 
+              how it detects system preferences, saves user choice, and transitions smoothly.
+            </p>
+            <div class="card-meta">
+              <span>📅 April 22, 2025 · ☕ 3 min</span>
+              <a href="post-dark-mode.html">Read →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="card reveal" data-category="creativity">
+          <div class="card-img">📚</div>
+          <div class="card-body">
+            <p class="card-category">Creativity</p>
+            <h3 class="card-title">The Student's Guide to Taking Notes That Actually Help You Later</h3>
+            <p class="card-excerpt">
+              After three years of failed note-taking systems, I finally found an approach
+              that sticks — and it has nothing to do with beautiful aesthetics.
+            </p>
+            <div class="card-meta">
+              <span>📅 April 10, 2025 · ☕ 4 min</span>
+              <a href="#">Read →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="card reveal" data-category="deepdive">
+          <div class="card-img">🔍</div>
+          <div class="card-body">
+            <p class="card-category">Deep Dive</p>
+            <h3 class="card-title">CSS Grid vs Flexbox: When to Use Which (and When to Use Both)</h3>
+            <p class="card-excerpt">
+              This is the comparison I wish existed when I started learning CSS layout.
+              Practical, visual, and honest about when the "right" answer is "it depends."
+            </p>
+            <div class="card-meta">
+              <span>📅 March 28, 2025 · ☕ 7 min</span>
+              <a href="#">Read →</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /page-container -->
+  </main>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

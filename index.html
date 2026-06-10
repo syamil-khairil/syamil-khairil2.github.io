@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inkwell — A blog about technology, creativity, and building things on the web." />
+  <title>Inkwell | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pages/blog.html">Blog</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══ HERO ═══════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="hero-tag">✍️ Writing &amp; Tech</span>
+        <h1>Ideas worth <em>writing</em> about.</h1>
+        <p class="hero-sub">
+          Inkwell is a personal blog exploring web development, design thinking,
+          and lessons learned from building software. Thoughtful. Practical. Human.
+        </p>
+        <a href="pages/blog.html" class="hero-cta">Read the Blog →</a>
+      </div>
+    </section>
+
+    <!-- ═══ CONTENT ════════════════════════════════════════ -->
+    <div class="page-container">
+
+      <!-- Featured Post -->
+      <div style="margin: 3rem 0 1rem;">
+        <p class="section-label">✦ Featured Article</p>
+        <h2 class="section-title">Editor's Pick</h2>
+      </div>
+
+      <article class="featured-post reveal">
+        <div class="featured-img">🧠</div>
+        <div class="featured-body">
+          <span class="featured-tag">Deep Dive</span>
+          <h2 class="featured-title">
+            Why Every Developer Should Learn to Design (Even Badly)
+          </h2>
+          <p class="featured-excerpt">
+            You don't need to become a designer to benefit from design thinking. 
+            Understanding colour contrast, whitespace, and typography will make you 
+            a dramatically better engineer — and a more empathetic one.
+          </p>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center; margin-top:1.25rem;">
+            <a href="pages/post-design-thinking.html" class="btn btn-primary">Read Article →</a>
+            <span class="text-muted" style="font-size:0.83rem;">📅 April 20, 2025 · ☕ 6 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recent Posts -->
+      <div style="margin: 2.5rem 0 1.5rem;">
+        <p class="section-label">✦ Latest Posts</p>
+        <h2 class="section-title">Recent Articles</h2>
+        <p class="section-sub">Freshly written and still warm.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <article class="card reveal" data-category="technology">
+          <div class="card-img">⚡</div>
+          <div class="card-body">
+            <p class="card-category">Technology</p>
+            <h3 class="card-title">Getting Started with GitHub Pages: Deploy for Free in 10 Minutes</h3>
+            <p class="card-excerpt">
+              GitHub Pages is one of the most underrated tools for students and developers.
+              Here's a step-by-step guide to launching your first site at zero cost.
+            </p>
+            <div class="card-meta">
+              <span>📅 May 1, 2025</span>
+              <a href="pages/post-github-pages.html">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card reveal" data-category="creativity">
+          <div class="card-img">🎨</div>
+          <div class="card-body">
+            <p class="card-category">Creativity</p>
+            <h3 class="card-title">Why I Started Writing: On Building a Personal Brand as a Student</h3>
+            <p class="card-excerpt">
+              Writing online as a university student feels vulnerable. But it's also the
+              fastest way to grow your network, sharpen your thinking, and land opportunities.
+            </p>
+            <div class="card-meta">
+              <span>📅 April 28, 2025</span>
+              <a href="pages/post-why-i-write.html">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card reveal" data-category="technology">
+          <div class="card-img">🌙</div>
+          <div class="card-body">
+            <p class="card-category">Technology</p>
+            <h3 class="card-title">Building a Dark Mode Toggle with Vanilla JavaScript and localStorage</h3>
+            <p class="card-excerpt">
+              A walkthrough of the dark mode implementation on this very blog — 
+              how it detects system preferences, saves user choice, and transitions smoothly.
+            </p>
+            <div class="card-meta">
+              <span>📅 April 22, 2025</span>
+              <a href="pages/post-dark-mode.html">Read more →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- CTA Strip -->
+      <div style="text-align:center; padding: 4rem 0 1rem;">
+        <p class="section-label">✦ There's more</p>
+        <h2 style="margin-bottom:0.75rem;">Explore all articles</h2>
+        <p class="text-muted" style="margin-bottom:1.5rem;">Browse by category or scroll through the full archive.</p>
+        <a href="pages/blog.html" class="btn btn-outline">View All Posts →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/blog.html">Blog</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

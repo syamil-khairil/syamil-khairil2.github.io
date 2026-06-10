@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Why every developer should learn design thinking — even badly. A reflection on colour, whitespace, and empathy." />
+  <title>Why Every Developer Should Learn to Design | Inkwell</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+  <!-- Reading progress bar -->
+  <style>
+    #readingProgress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--accent); width: 0%;
+      z-index: 9999; transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="readingProgress" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ink<span>well</span> ✒️</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-container" style="max-width:760px;">
+
+      <!-- Back Link -->
+      <a href="blog.html" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.88rem; color:var(--text-muted); margin-bottom:2rem; transition:color 0.2s;" 
+         onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+        ← Back to Blog
+      </a>
+
+      <!-- Article Header -->
+      <header class="article-header">
+        <p class="card-category">🧠 Deep Dive</p>
+        <h1>Why Every Developer Should Learn to Design (Even Badly)</h1>
+        <div class="article-meta">
+          <span>📅 April 20, 2025</span>
+          <span>✍️ Muhammad Syamil</span>
+          <span id="readTimeBadge">☕ 6 min read</span>
+        </div>
+      </header>
+
+      <!-- Article Body -->
+      <article class="article-body">
+
+        <p>
+          Last semester, my lecturer asked us to present a working prototype of a 
+          student dashboard. My teammate handled the backend logic — API calls, 
+          database queries, user authentication. I handled the frontend. When we 
+          demoed it, the backend was flawless. The frontend looked like a spreadsheet 
+          had a nightmare.
+        </p>
+
+        <p>
+          We still passed. But I couldn't stop thinking about what we'd shipped. 
+          The dashboard was technically correct and visually punishing. Every number 
+          was accurate; nothing was readable. Users would have been right to hate it.
+        </p>
+
+        <blockquote>
+          "Good design is obvious. Great design is transparent." — Joe Sparano
+        </blockquote>
+
+        <p>
+          That semester, I started paying attention to design — not to become a 
+          designer, but to become a less ignorant developer. Here's what I learned.
+        </p>
+
+        <h2>You Don't Need to Become a Designer</h2>
+
+        <p>
+          The goal isn't to replace your designer or to master Figma. The goal is to 
+          develop a threshold of design literacy that prevents you from shipping 
+          something painful to use.
+        </p>
+
+        <p>
+          Most developers interact with users indirectly — through the interfaces they 
+          build. Every font size, every button colour, every error message is a 
+          decision that affects a real person. If you have no mental model of how 
+          those decisions affect users, you'll make them blindly.
+        </p>
+
+        <h2>Three Things Worth Learning</h2>
+
+        <h3>1. Colour Contrast</h3>
+        <p>
+          WCAG (Web Content Accessibility Guidelines) requires a 4.5:1 contrast ratio 
+          for normal text. Light grey text on white background — a popular aesthetic 
+          choice — often fails this. Tools like 
+          <code>WebAIM Contrast Checker</code> take 30 seconds to use. Use them.
+        </p>
+
+        <h3>2. Whitespace Is Doing Work</h3>
+        <p>
+          Empty space isn't wasted space. It creates visual hierarchy, guides the eye, 
+          and makes interfaces feel less overwhelming. When something looks "too crowded," 
+          the fix is rarely "make things smaller" — it's "add space between things."
+        </p>
+
+        <h3>3. Typography Is Information Architecture</h3>
+        <p>
+          Heading size, font weight, and line height tell users what matters and what 
+          to read in what order. Before you choose a font, choose a type scale. 
+          Even a simple three-level hierarchy (h1, h2, body) makes a huge difference 
+          compared to flat, uniform text.
+        </p>
+
+        <h2>The Empathy Argument</h2>
+
+        <p>
+          Here's the real reason to care: design forces you to think about someone 
+          other than yourself. When you ask "can a person with low vision read this 
+          button label?" or "will someone on a slow mobile connection see the content 
+          before they give up?", you're building empathy for your users.
+        </p>
+
+        <p>
+          Empathy makes you a better engineer. Period.
+        </p>
+
+        <h2>Start Small</h2>
+
+        <p>
+          You don't need a design course. Start by critiquing three websites you use 
+          every day. What feels fast? What feels slow? What's confusing? What delights 
+          you? You already have opinions — start making them conscious.
+        </p>
+
+        <p>
+          Then, on your next project, make three deliberate design decisions: 
+          a consistent spacing scale, a readable font size (at least 16px), 
+          and sufficient contrast. That's enough for now.
+        </p>
+
+        <p style="margin-top:2rem; padding:1.25rem; background:var(--bg-alt); border-radius:var(--radius); border:1px solid var(--border);">
+          <strong>TL;DR:</strong> Learning design won't make you a worse programmer. 
+          It will make the things you build less frustrating to use — which makes you 
+          a more valuable developer.
+        </p>
+
+      </article>
+
+      <!-- Author Footer -->
+      <hr class="divider" />
+      <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+        <div style="font-size:2.5rem; background:var(--bg-alt); border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">👩‍💻</div>
+        <div>
+          <p style="font-weight:600; margin:0;">Written by Muhammad Syamil</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0.2rem 0 0.5rem;">CS Student · Inkwell</p>
+          <a href="about.html" style="font-size:0.83rem;">Read more about me →</a>
+        </div>
+      </div>
+
+      <!-- Back Navigation -->
+      <div style="margin-top:3rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <a href="blog.html" class="btn btn-outline">← All Posts</a>
+        <a href="post-github-pages.html" class="btn btn-primary">Next Post →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ink<span>well</span> ✒️</span>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Inkwell · Built with ❤️ and plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
